@@ -85,7 +85,7 @@ style="height:250px; object-fit:cover; width:100%;"
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Arg_vs_mex_julianalvarez_moreno_ochoa_y_messi%28cropped%29.jpg/640px-Arg_vs_mex_julianalvarez_moreno_ochoa_y_messi%28cropped%29.jpg">
 
 <p style="margin-top:10px;">
-Messi liderando a Argentina hacia el título mundial en 2022.
+Messi liderando a la Selección Argentina hacia el título mundial en 2022.
 </p>
 </div>
 
