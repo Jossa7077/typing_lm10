@@ -133,7 +133,7 @@ haciendo la experiencia más dinámica y motivadora para los usuarios.
 <br><br>
 
 <div style="text-align:center; margin-top:30px; color:#666; font-size:14px;">
-Proyecto académico desarrollado por <strong>Jaider Santiago Jossa Ramos</strong>
+Proyecto académico desarrollado por <strong>Jaider Santiago Jossa Ramos - Sebastian Alexander Jimenez Santander</strong>
 </div>
 
 @endsection
