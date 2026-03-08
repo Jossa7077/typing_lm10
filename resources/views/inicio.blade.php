@@ -62,7 +62,7 @@ src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Russia_v_Argentin
 <div class="col-md-4">
 <img class="img-fluid rounded shadow"
 style="height:250px; object-fit:cover; width:100%;"
-src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg">
+src="https://uh.gsstatic.es/deportes/mundial-qatar/2022/12/15/2207711/mundial-qatar-2022-francia-argentina-final-messi.jpg">
 
 <p style="margin-top:10px;">
 Messi representando a Argentina en una Copa del Mundo.
@@ -82,7 +82,7 @@ El talento y control de balón que lo caracteriza.
 <div class="col-md-4">
 <img class="img-fluid rounded shadow"
 style="height:250px; object-fit:cover; width:100%;"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Arg_vs_mex_julianalvarez_moreno_ochoa_y_messi%28cropped%29.jpg/640px-Arg_vs_mex_julianalvarez_moreno_ochoa_y_messi%28cropped%29.jpg">
+src="https://media.lacapital.com.ar/p/4efd7c80f9f38aac2afcbfa0b9132423/adjuntos/203/imagenes/100/289/0100289277/642x0/smart/liojpg.jpg">
 
 <p style="margin-top:10px;">
 Messi liderando a la Selección Argentina hacia el título mundial en 2022.

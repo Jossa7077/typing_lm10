@@ -63,7 +63,7 @@ Ligas Españolas y varios Balones de Oro.
 <div class="card h-100 text-center">
 
 <img class="card-img-top"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/LIONEL_MESSI_-_BRESH_MIAMI_%28Cropped%29.jpg/640px-LIONEL_MESSI_-_BRESH_MIAMI_%28Cropped%29.jpg">
+src="https://i.pinimg.com/736x/cd/6e/0e/cd6e0e0a5a5ef27603fb329d70d2f68b.jpg">
 
 <div class="card-body">
 
