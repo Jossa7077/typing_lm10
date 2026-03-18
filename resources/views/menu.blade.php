@@ -39,7 +39,7 @@ En La Masía comenzó a demostrar su talento extraordinario.
 <div class="card h-100 text-center">
 
 <img class="card-img-top"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Messi_with_Neymar_Junior_the_Future_of_Brazil.jpg/640px-Messi_with_Neymar_Junior_the_Future_of_Brazil.jpg">
+src="https://i.pinimg.com/736x/e3/19/ea/e319eafad722a69454adf00e3d243a88.jpg">
 
 <div class="card-body">
 

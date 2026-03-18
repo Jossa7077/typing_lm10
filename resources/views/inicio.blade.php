@@ -45,7 +45,7 @@ sobre el jugador que cambió la historia del fútbol moderno.
 
 <img class="img-fluid rounded shadow"
 style="max-height:350px; object-fit:cover;"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Russia_v_Argentina_-_Lionel_Messi.jpg/640px-Russia_v_Argentina_-_Lionel_Messi.jpg">
+src="https://preview.redd.it/laporta-confirms-leo-messi-will-have-a-statue-at-camp-nou-v0-8qh48hsgq21g1.jpeg?width=640&crop=smart&auto=webp&s=d055a9e7523b8657a0e31bb77a79040438c62dd8">
 
 </div>
 
@@ -72,7 +72,7 @@ Messi representando a Argentina en una Copa del Mundo.
 <div class="col-md-4">
 <img class="img-fluid rounded shadow"
 style="height:250px; object-fit:cover; width:100%;"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Lionel_Messi_%28L%29%2C_Bruno_Alves_%28R%29_%E2%80%93_Portugal_vs._Argentina%2C_9th_February_2011.jpg/640px-Lionel_Messi_%28L%29%2C_Bruno_Alves_%28R%29_%E2%80%93_Portugal_vs._Argentina%2C_9th_February_2011.jpg">
+src="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/1294/728/messi1.jpg?ve=1&tl=1">
 
 <p style="margin-top:10px;">
 El talento y control de balón que lo caracteriza.
