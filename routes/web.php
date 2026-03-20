@@ -8,13 +8,8 @@ Route::get('/', [PaginaController::class, 'inicio'])->name('inicio');
 
 Route::get('/nosotros', [PaginaController::class, 'nosotros'])->name('nosotros');
 
+Route::get('/menu', [PaginaController::class, 'menu'])->name('menu');
 
-Route::get('/menu', function () {
-    return view('menu');
-})->name('menu');
+Route::get('/contacto', [PaginaController::class, 'contacto'])->name('contacto');
 
-
-Route::get('/contacto', function () {
-    return view('contacto');
-})->name('contacto');
 

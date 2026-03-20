@@ -15,5 +15,15 @@ class PaginaController extends Controller
     {
         return view('nosotros');
     }
+
+    public function menu()
+    {
+        return view('menu');
+    }
+
+    public function contacto()
+    {
+        return view('contacto');
+    }
     
 }
