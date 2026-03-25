@@ -12,4 +12,6 @@ Route::get('/menu', [PaginaController::class, 'menu'])->name('menu');
 
 Route::get('/contacto', [PaginaController::class, 'contacto'])->name('contacto');
 
+Route:: post('/pqrs',[PqrsController::class,'store'])->name('pqrs.store');
+
 

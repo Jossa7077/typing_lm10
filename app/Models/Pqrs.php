@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pqrs extends Model
 {
-    protected $table = 'pqrs';
+    protected $fillable = [
+        'nombre',
+        'apellidos',
+        'correo',
+        'tipo',
+        'mensaje',
+        'estado'
+    ];
 }
