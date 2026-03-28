@@ -1,32 +1,42 @@
 @extends('layouts.app')
 
 @section('title', 'Mensajes')
-
 @section('content')
-<h2 class="text-center mb-4">Mensajes recibidos</h2>
+<div class="container mt-4">
+    <h3 class="mb-4 text-center">Mensajes PQRS</h3>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Correo</th>
-            <th>Tipo</th>
-            <th>Mensaje</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($mensajes as $mensaje)
-            <tr>
-                <td>{$mensaje->id}</td>
-                <td>{$mensaje->nombres}</td>
-                <td>{$mensaje->apellidos}</td>
-                <td>{$mensaje->correo}</td>
-                <td>{$mensaje->tipo}</td>
-                <td>{$mensaje->mensaje}</td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered align-middle text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Tipo</th>
+                    <th>Mensaje</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+               @forelse($pqrs as $index => $item)
+<tr>
+    <td>{{ $index + 1 }}</td>
+    <td>{{ $item->nombre }}</td>
+    <td>{{ $item->apellidos }}</td>
+    <td>{{ $item->correo }}</td>
+    <td>{{ $item->tipo }}</td>
+    <td>{{ $item->mensaje }}</td>
+    <td>{{ $item->created_at->format('d/m/Y H:i') }}</td>
+</tr>
+@empty
+<tr>
+    <td colspan="7">No hay mensajes registrados</td>
+</tr>
+@endforelse
+                
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection

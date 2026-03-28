@@ -11,7 +11,7 @@
 
 <body style="background:#f4f6f9;">
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background:#a50044;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#a50044;">
 <div class="container">
 
 <a class="navbar-brand fw-bold" href="{{ route('inicio') }}">
@@ -40,6 +40,10 @@ Typing Messi ⚽
 
 <li class="nav-item">
 <a class="nav-link" href="{{ route('contacto') }}">Contacto</a>
+</li>
+
+<li class="nav-item">
+   <a class="nav-link" href="{{ route('mensajes.index') }}">Mensajes</a>
 </li>
 
 </ul>

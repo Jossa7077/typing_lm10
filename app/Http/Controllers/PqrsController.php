@@ -1,40 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Pqrs;
+use App\Models\Pqrs; //invocamos 
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class PqrsController extends Controller
 {
-    public function store(Request $request){
-        // El error desaparece al agregar el punto y coma al final
-        $request->validate([
-        
-    'nombres' => 'required|string|max:100',
-    'apellidos' => 'required|string|max:100',
-    'correo' => 'required|email',
-    'tipo' => 'required|in:Queja,Petición,Felicitación',
-    'mensaje' => 'required|string',
-    'acepto' => 'accepted'
-]);
+    //recibe datos del html  y muestra datos en la pagina, laravel recibe la peticion http  
+     public function store (Request $request){
+       $request ->validate([
 
-        
+            'nombres'=> 'required|string|max:100',
+                'apellidos'=> 'required|string|max:100',
+                'correo' => 'required|email',
+                'tipo' => 'required|in:Queja,Peticion,Felicitacion',
+                'acepto'=> 'accepted'
 
-        Pqrs::create([
-        'nombre'=>$request->nombres,
-        'apellidos'=>$request->apellidos,
-        'correo'=>$request->correo,
-        'tipo'=>$request->tipo,
-        'mensaje'=>$request->mensaje,
-        'estado'=>$request->has('acepto')
-        
+       ]);
+       Pqrs::create([
+                 'nombre'=> $request ->nombres, 
+                'apellidos'=> $request ->apellidos,
+                      'correo'=> $request ->correo,
+                      'tipo'=> $request ->tipo,
+                      'mensaje'=> $request ->mensaje,
+                      'estado'=> $request ->has ('acepto')
 
-        ]);
-        return redirect()->route('nosotros')->with('success', 'Mensaje enviado correctamente');
-    }
-    public function index()
-    {
-    $mensajes = Pqrs::orderBy('id','desc')->get();
-    return view('mensajes', compact('mensajes'));
-    }
+       ]);
+       return redirect()->route('nosotros')->with('success', 'Mensaje guardado correctamente ✅');
+     }
+     public function index()
+{
+ 
+     $pqrs = Pqrs::latest()->get();
+  
+    return view('mensajes', compact('pqrs'));
+}
 }
