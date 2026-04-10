@@ -25,6 +25,7 @@ class PqrsController extends Controller
                       'tipo'=> $request ->tipo,
                       'mensaje'=> $request ->mensaje,
                       'estado'=> $request ->has ('acepto')
+                     
 
        ]);
        return redirect()->route('nosotros')->with('success', 'Mensaje guardado correctamente ✅');
@@ -36,4 +37,38 @@ class PqrsController extends Controller
   
     return view('mensajes', compact('pqrs'));
 }
+////// Editar
+    public function edit($id)
+{
+    $mensaje = Pqrs::findOrFail($id);
+    return view('editar_mensaje', compact('mensaje'));
+}
+
+
+/////// Actualizar  
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nombres' => 'required|string|max:100',
+            'apellidos' => 'required|string|max:100',
+            'correo' => 'required|email',
+            'telefono' => 'required|numeric|digits_between:7,10',
+            'tipo' => 'required|in:Queja,Petición,Reclamo,Sugerencia,Felicitación',
+            'prioridad' => 'required|in:Alta,Media,Baja',
+            'mensaje' => 'required|string|min:10'
+        ]);
+
+        $mensaje = Pqrs::findOrFail($id);
+
+        $mensaje->update([
+            'nombres' => $request->nombres,
+            'apellidos' => $request->apellidos,
+            'correo' => $request->correo,
+            'telefono' => $request->telefono,
+            'tipo' => $request->tipo,
+            'prioridad' => $request->prioridad,
+            'mensaje' => $request->mensaje
+        ]);
+    }
+
 }
