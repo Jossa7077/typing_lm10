@@ -29,23 +29,39 @@
     <td>{{ $item->tipo }}</td>
     <td>{{ $item->mensaje }}</td>
     <td>{{ $item->created_at->format('d/m/Y H:i') }}</td>
-    <td> <a href="" class="btn btn-warning btn-sm mb-1">
-                            Editar
-                        </a>
 
-                        <form action="" method="POST" style="display:inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                onclick="return confirm('¿Seguro que deseas eliminar este mensaje?')">
-                                Eliminar
-                            </button>
-                        </form> </td>
+    <td>
+
+    <!-- BOTÓN EDITAR -->
+    <a href="{{ route('mensajes.edit', $item->id) }}"
+       class="btn btn-warning btn-sm mb-1">
+        Editar
+    </a>
+
+    <!-- BOTÓN ELIMINAR -->
+    <form action="{{ route('mensajes.destroy', $item->id) }}"
+          method="POST"
+          style="display:inline-block;">
+
+        @csrf
+        @method('DELETE')
+
+        <button type="submit"
+                class="btn btn-danger btn-sm"
+                onclick="return confirm('¿Seguro que deseas eliminar este mensaje?')">
+
+            Eliminar
+
+        </button>
+
+    </form>
+
+</td>
     
 </tr>
 @empty
 <tr>
-    <td colspan="7">No hay mensajes registrados</td>
+    <td colspan="8">No hay mensajes registrados</td>
 </tr>
 @endforelse
                 

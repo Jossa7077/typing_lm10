@@ -55,10 +55,10 @@
                 <div class="mb-3">
                     <label>Tipo de solicitud</label>
                     <select name="tipo" class="form-select">
-                        <option value="">Seleccione una opción</option>
-                        <option value="Queja">Queja</option>
-                        <option value="Petición">Petición</option>
-                        <option value="Felicitación">Felicitación</option>
+                       <option value="">Seleccione una opción</option>
+                       <option value="Queja">Queja</option>
+                       <option value="Peticion">Petición</option>
+                       <option value="Felicitacion">Felicitación</option>
                     </select>
                 </div>
 

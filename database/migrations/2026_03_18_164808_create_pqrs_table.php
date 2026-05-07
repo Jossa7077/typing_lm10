@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('correo');
-            $table->enum('tipo',['Queja','Petición','Felicitación']);
+            $table->enum('tipo',['Queja','Peticion','Felicitacion']);
             $table->text('mensaje');
             $table->boolean('estado')->default(false);
             $table->timestamps();

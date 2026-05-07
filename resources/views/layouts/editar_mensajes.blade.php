@@ -31,7 +31,7 @@ method="POST">
 <input type="text"
 name="nombres"
 class="form-control"
-value="{{ $mensaje->nombres }}">
+value="{{ $mensaje->nombre }}">
 </div>
 
 <div class="col-md-6 mb-3">

@@ -9,6 +9,7 @@ class PqrsController extends Controller
 {
     //recibe datos del html  y muestra datos en la pagina, laravel recibe la peticion http  
      public function store (Request $request){
+      
        $request ->validate([
 
             'nombres'=> 'required|string|max:100',
@@ -53,7 +54,7 @@ class PqrsController extends Controller
             'apellidos' => 'required|string|max:100',
             'correo' => 'required|email',
             'telefono' => 'required|numeric|digits_between:7,10',
-            'tipo' => 'required|in:Queja,Petición,Reclamo,Sugerencia,Felicitación',
+            'tipo' => 'required|in:Queja,Peticion,Felicitacion',
             'prioridad' => 'required|in:Alta,Media,Baja',
             'mensaje' => 'required|string|min:10'
         ]);
@@ -61,14 +62,17 @@ class PqrsController extends Controller
         $mensaje = Pqrs::findOrFail($id);
 
         $mensaje->update([
-            'nombres' => $request->nombres,
-            'apellidos' => $request->apellidos,
-            'correo' => $request->correo,
-            'telefono' => $request->telefono,
-            'tipo' => $request->tipo,
-            'prioridad' => $request->prioridad,
-            'mensaje' => $request->mensaje
-        ]);
+    'nombre' => $request->nombres,
+    'apellidos' => $request->apellidos,
+    'correo' => $request->correo,
+    'telefono' => $request->telefono,
+    'tipo' => $request->tipo,
+    'prioridad' => $request->prioridad,
+    'mensaje' => $request->mensaje
+]);
+
+return redirect()->route('mensajes')
+    ->with('success', 'Actualizado correctamente');
     }
 
 }

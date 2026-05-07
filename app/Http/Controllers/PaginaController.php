@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class PaginaController extends Controller
 {
-    public function inicio()
-    {
-        return view('inicio');
-    }
+   public function inicio()
+{
+    return view('inicio');
+}
 
     public function nosotros()
     {
