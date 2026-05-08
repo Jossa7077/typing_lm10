@@ -171,9 +171,7 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
 
         <div class="card border-0 shadow">
 
-            <div class="card-header bg-dark text-white">
-                Frase Inspiradora
-            </div>
+            
 
             <div class="card-body text-center">
 

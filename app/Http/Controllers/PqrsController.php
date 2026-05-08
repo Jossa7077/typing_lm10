@@ -42,7 +42,7 @@ class PqrsController extends Controller
     public function edit($id)
 {
     $mensaje = Pqrs::findOrFail($id);
-    return view('editar_mensaje', compact('mensaje'));
+    return view('layouts.editar_mensajes', compact('mensaje'));
 }
 
 
@@ -74,5 +74,14 @@ class PqrsController extends Controller
 return redirect()->route('mensajes')
     ->with('success', 'Actualizado correctamente');
     }
+
+    public function destroy($id)
+{
+    $mensaje = Pqrs::findOrFail($id);
+
+    $mensaje->delete();
+
+    return redirect()->back()->with('success', 'Mensaje eliminado correctamente');
+}
 
 }
