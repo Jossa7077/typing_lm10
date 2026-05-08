@@ -3,6 +3,9 @@
 @section('title', 'Nosotros')
 
 @section('content')
+
+
+
 <h2 class="text-center mb-4">Sobre Nosotros</h2>
 
 <p class="text-center">
@@ -77,3 +80,4 @@
         </div>
     </div>
 </div>
+@endsection
