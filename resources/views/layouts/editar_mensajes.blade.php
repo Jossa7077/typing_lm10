@@ -57,12 +57,38 @@ value="{{ $mensaje->correo }}">
 
 <select name="tipo" class="form-select">
 
-<option value="Queja">Queja</option>
-<option value="Petición">Petición</option>
-<option value="Felicitación">Felicitación</option>
+<option value="Queja"
+{{ $mensaje->tipo == 'Queja' ? 'selected' : '' }}>
+Queja
+</option>
+
+<option value="Peticion"
+{{ $mensaje->tipo == 'Peticion' ? 'selected' : '' }}>
+Petición
+</option>
+
+<option value="Felicitacion"
+{{ $mensaje->tipo == 'Felicitacion' ? 'selected' : '' }}>
+Felicitación
+</option>
 
 </select>
 
+</div>
+
+<div class="mb-3">
+    <label>Teléfono</label>
+    <input type="text" name="telefono" class="form-control"
+           value="{{ $mensaje->telefono }}">
+</div>
+
+<div class="mb-3">
+    <label>Prioridad</label>
+    <select name="prioridad" class="form-control">
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+    </select>
 </div>
 
 <div class="mb-3">
@@ -101,3 +127,4 @@ Actualizar
 </form>
 
 </div>
+@endsection
