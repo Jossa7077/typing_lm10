@@ -1,102 +1,204 @@
 <section>
-    <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            Información del Perfil
-        </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
-            Actualiza la información de tu perfil y tu correo electrónico.
-        </p>
-    </header>
+    <!-- CARD PRINCIPAL -->
+    <div class="card border-0 shadow-lg rounded-5 overflow-hidden">
 
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-        @csrf
-    </form>
+        <!-- HEADER -->
+        <div
+            class="text-white p-5"
+            style="
+                background: linear-gradient(
+                    135deg,
+                    #004d98,
+                    #7c3aed
+                );
+            "
+        >
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
-        @csrf
-        @method('patch')
+            <h2 class="fw-bold mb-2">
+                Información del Perfil ⚽
+            </h2>
 
-        <!-- Nombre -->
-        <div>
-            <x-input-label for="name" value="Nombre" />
+            <p class="mb-0 fs-5">
+                Actualiza la información de tu cuenta de Typing Messi.
+            </p>
 
-            <x-text-input 
-                id="name"
-                name="name"
-                type="text"
-                class="mt-1 block w-full"
-                :value="old('name', $user->name)"
-                required
-                autofocus
-                autocomplete="name"
-            />
-
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
-        <!-- Correo -->
-        <div>
-            <x-input-label for="email" value="Correo Electrónico" />
+        <!-- BODY -->
+        <div class="p-5 bg-white">
 
-            <x-text-input
-                id="email"
-                name="email"
-                type="email"
-                class="mt-1 block w-full"
-                :value="old('email', $user->email)"
-                required
-                autocomplete="username"
-            />
+            <!-- FORM VERIFICACIÓN -->
+            <form
+                id="send-verification"
+                method="post"
+                action="{{ route('verification.send') }}"
+            >
 
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+                @csrf
 
-            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+            </form>
 
-                <div>
-                    <p class="text-sm mt-2 text-gray-800">
-                        Tu correo electrónico no ha sido verificado.
+            <!-- FORMULARIO -->
+            <form
+                method="post"
+                action="{{ route('profile.update') }}"
+            >
 
-                        <button form="send-verification"
-                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md">
-                            
-                            Haz clic aquí para reenviar el correo de verificación.
-                        </button>
-                    </p>
+                @csrf
+                @method('patch')
 
-                    @if (session('status') === 'verification-link-sent')
+                <!-- NOMBRE -->
+                <div class="mb-4">
 
-                        <p class="mt-2 font-medium text-sm text-green-600">
-                            Se ha enviado un nuevo enlace de verificación a tu correo.
-                        </p>
+                    <label class="form-label fw-bold">
 
-                    @endif
+                        Nombre Completo
+
+                    </label>
+
+                    <x-text-input
+                        id="name"
+                        name="name"
+                        type="text"
+                        class="form-control rounded-4 p-3 shadow-sm border-0"
+                        :value="old('name', $user->name)"
+                        required
+                        autofocus
+                        autocomplete="name"
+                        placeholder="Ingrese su nombre"
+                    />
+
+                    <x-input-error
+                        class="mt-2 text-danger"
+                        :messages="$errors->get('name')"
+                    />
+
                 </div>
 
-            @endif
+                <!-- EMAIL -->
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+
+                        Correo Electrónico
+
+                    </label>
+
+                    <x-text-input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="form-control rounded-4 p-3 shadow-sm border-0"
+                        :value="old('email', $user->email)"
+                        required
+                        autocomplete="username"
+                        placeholder="Ingrese su correo"
+                    />
+
+                    <x-input-error
+                        class="mt-2 text-danger"
+                        :messages="$errors->get('email')"
+                    />
+
+                    <!-- VERIFICACIÓN -->
+                    @if (
+                        $user instanceof
+                        \Illuminate\Contracts\Auth\MustVerifyEmail
+                        &&
+                        ! $user->hasVerifiedEmail()
+                    )
+
+                        <div
+                            class="alert alert-warning rounded-4 mt-4"
+                        >
+
+                            <p class="mb-2 fw-semibold">
+
+                                Tu correo electrónico no ha sido verificado.
+
+                            </p>
+
+                            <button
+                                form="send-verification"
+                                class="btn btn-warning rounded-4 fw-bold"
+                            >
+
+                                Reenviar verificación
+
+                            </button>
+
+                            @if (
+                                session('status')
+                                ===
+                                'verification-link-sent'
+                            )
+
+                                <p class="mt-3 text-success fw-bold">
+
+                                    Se envió un nuevo enlace
+                                    de verificación ✅
+
+                                </p>
+
+                            @endif
+
+                        </div>
+
+                    @endif
+
+                </div>
+
+                <!-- BOTONES -->
+                <div class="d-flex align-items-center gap-3 mt-5">
+
+                    <button
+                        type="submit"
+                        class="btn btn-lg text-white fw-bold rounded-4 shadow px-5"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #004d98,
+                                #7c3aed
+                            );
+                            border:none;
+                            transition:0.3s;
+                        "
+
+                        onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'"
+                    >
+
+                        Guardar Cambios ⚽
+
+                    </button>
+
+                    @if (
+                        session('status')
+                        ===
+                        'profile-updated'
+                    )
+
+                        <div
+                            x-data="{ show: true }"
+                            x-show="show"
+                            x-transition
+                            x-init="setTimeout(() => show = false, 2500)"
+                            class="alert alert-success mb-0 rounded-4 px-4 py-2"
+                        >
+
+                            Perfil actualizado correctamente ✅
+
+                        </div>
+
+                    @endif
+
+                </div>
+
+            </form>
+
         </div>
 
-        <!-- Botón -->
-        <div class="flex items-center gap-4">
+    </div>
 
-            <x-primary-button>
-                Guardar Cambios
-            </x-primary-button>
-
-            @if (session('status') === 'profile-updated')
-
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600"
-                >
-                    Guardado correctamente.
-                </p>
-
-            @endif
-
-        </div>
-    </form>
 </section>
