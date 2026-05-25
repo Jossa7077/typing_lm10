@@ -4,7 +4,6 @@
 
 @section('content')
 
-<!-- HERO -->
 <div class="container-fluid p-5 mb-5 rounded-4 shadow"
 style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
 
@@ -43,10 +42,8 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
     </div>
 </div>
 
-<!-- TARJETAS -->
 <div class="row g-4">
 
-    <!-- Usuarios -->
     <div class="col-md-4">
         <div class="card border-0 shadow h-100">
 
@@ -70,7 +67,6 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
         </div>
     </div>
 
-    <!-- Mensajes -->
     <div class="col-md-4">
         <div class="card border-0 shadow h-100">
 
@@ -94,7 +90,6 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
         </div>
     </div>
 
-    <!-- Proyecto -->
     <div class="col-md-4">
         <div class="card border-0 shadow h-100">
 
@@ -121,42 +116,41 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
 
 </div>
 
-<!-- SECCIÓN INFERIOR -->
-<div class="row mt-5">
+<div class="row mt-5 g-4">
 
     <div class="col-md-6">
 
-        <div class="card border-0 shadow">
+        <div class="card border-0 shadow h-100 rounded-4 overflow-hidden">
 
-            <div class="card-header bg-primary text-white">
-                Estadísticas del Proyecto
+            <div class="card-header p-3 fw-bold text-white border-0" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+                📊 Estadísticas del Proyecto
             </div>
 
-            <div class="card-body">
+            <div class="card-body p-4">
 
                 <div class="mb-4">
-                    <h5>Usuarios registrados</h5>
-                    <div class="progress">
-                        <div class="progress-bar bg-primary" style="width: 10%">
+                    <h6 class="fw-semibold text-secondary">Usuarios registrados</h6>
+                    <div class="progress" style="height: 18px; border-radius: 10px;">
+                        <div class="progress-bar bg-primary fw-bold" style="width: 10%">
                             10%
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-4">
-                    <h5>Mensajes respondidos</h5>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" style="width: 15%">
+                    <h6 class="fw-semibold text-secondary">Mensajes respondidos</h6>
+                    <div class="progress" style="height: 18px; border-radius: 10px;">
+                        <div class="progress-bar bg-success fw-bold" style="width: 15%">
                             15%
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <h5>Avance del proyecto</h5>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" style="width: 85%">
-                            85%
+                    <h6 class="fw-semibold text-secondary">Avance del proyecto</h6>
+                    <div class="progress" style="height: 18px; border-radius: 10px;">
+                        <div class="progress-bar bg-danger fw-bold" style="width: 100%">
+                            100%
                         </div>
                     </div>
                 </div>
@@ -169,28 +163,30 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
 
     <div class="col-md-6">
 
-        <div class="card border-0 shadow">
-
+        <div class="card border-0 shadow h-100 rounded-4 overflow-hidden bg-light d-flex flex-column justify-content-between">
             
-
-            <div class="card-body text-center">
-
+            <div class="p-3 bg-white text-center">
                 <img 
                     src="https://static.messi.com/wp-content/uploads/2019/10/ronnie-messi.jpg"
-                    class="img-fluid rounded mb-3"
-                    style="max-height:300px; object-fit:cover;"
+                    class="img-fluid rounded-3 shadow-sm w-100"
+                    style="max-height: 250px; object-fit: cover; object-position: center;"
                 >
+            </div>
 
-                <blockquote class="blockquote">
-                    <p>
-                        “Tuve que luchar para llegar a donde estoy.”
+            <div class="px-3 pb-3 pt-1">
+                <div class="position-relative p-3 rounded-3 text-center border" 
+                     style="background: linear-gradient(135deg, #f8fafc, #edf2f7); border-color: #e2e8f0 !important;">
+                    
+                    <span class="position-absolute" style="top: -5px; left: 15px; font-size: 4rem; font-family: 'Georgia', serif; color: rgba(0, 77, 152, 0.08); line-height: 1; pointer-events: none;">“</span>
+                    
+                    <p class="fs-5 fw-normal text-dark mb-1 italic-quote px-3" style="font-family: 'Georgia', serif; font-style: italic; color: #334155 !important; line-height: 1.5;">
+                        Tuve que luchar para llegar a donde estoy.
                     </p>
-                </blockquote>
 
-                <footer class="blockquote-footer mt-2">
-                    Lionel Messi
-                </footer>
-
+                    <footer class="fw-bold text-muted text-uppercase tracking-wider mt-1" style="font-size: 0.75rem; letter-spacing: 1.5px; color: #004d98 !important;">
+                        — Lionel Messi
+                    </footer>
+                </div>
             </div>
 
         </div>
@@ -199,7 +195,6 @@ style="background: linear-gradient(135deg,#004d98,#a50044); color:white;">
 
 </div>
 
-<!-- FOOTER INFO -->
 <div class="mt-5 p-4 rounded-4 shadow-sm text-center"
 style="background:#f8f9fa;">
 
@@ -207,7 +202,7 @@ style="background:#f8f9fa;">
         Panel Administrativo - Typing Messi
     </h4>
 
-    <p class="text-muted">
+    <p class="text-muted mb-0">
         Desde este panel puedes administrar el contenido,
         gestionar mensajes y continuar desarrollando
         la experiencia educativa del proyecto.

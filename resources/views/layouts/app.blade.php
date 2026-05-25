@@ -26,10 +26,12 @@
         rel="stylesheet"
     >
 
-    <!-- ANIMACIONES -->
+    <!-- ESTILOS -->
     <style>
 
-        /* ANIMACIÓN GENERAL */
+        /* =========================================
+           ANIMACIÓN GENERAL
+        ========================================== */
 
         body{
 
@@ -42,8 +44,94 @@
                 #ede9fe 100%
             );
 
+            background-size: 300% 300%;
+
+            animation:
+                fadeIn 1s ease-in,
+                waterFlow 12s ease infinite;
+
             min-height: 100vh;
+
+            overflow-x: hidden;
+
+            position: relative;
         }
+
+        /* EFECTO AGUA / CASCADA */
+
+        body::before{
+
+            content:'';
+
+            position:fixed;
+
+            top:0;
+            left:0;
+
+            width:100%;
+            height:100%;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,255,255,0.20),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(255,255,255,0.15),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 80%,
+                    rgba(255,255,255,0.18),
+                    transparent 28%
+                );
+
+            animation: floatingWater 14s ease-in-out infinite;
+
+            pointer-events:none;
+
+            z-index:0;
+        }
+
+        /* MOVIMIENTO DEL FONDO */
+
+        @keyframes waterFlow{
+
+            0%{
+                background-position: 0% 50%;
+            }
+
+            50%{
+                background-position: 100% 50%;
+            }
+
+            100%{
+                background-position: 0% 50%;
+            }
+
+        }
+
+        /* MOVIMIENTO DE BURBUJAS/LUCES */
+
+        @keyframes floatingWater{
+
+            0%{
+                transform: translateY(0px);
+            }
+
+            50%{
+                transform: translateY(-25px);
+            }
+
+            100%{
+                transform: translateY(0px);
+            }
+
+        }
+
+        /* ENTRADA SUAVE */
 
         @keyframes fadeIn{
 
@@ -59,7 +147,21 @@
 
         }
 
-        /* EFECTO TARJETAS */
+        /* TODO ENCIMA DEL FONDO */
+
+        main,
+        nav,
+        footer,
+        header{
+
+            position:relative;
+
+            z-index:2;
+        }
+
+        /* =========================================
+           EFECTO TARJETAS
+        ========================================== */
 
         .card{
 
@@ -71,11 +173,14 @@
 
             transform: translateY(-10px);
 
-            box-shadow: 0px 15px 30px rgba(0,0,0,0.2) !important;
+            box-shadow:
+                0px 15px 30px rgba(0,0,0,0.2) !important;
 
         }
 
-        /* EFECTO IMÁGENES */
+        /* =========================================
+           EFECTO IMÁGENES
+        ========================================== */
 
         img{
 
@@ -89,7 +194,9 @@
 
         }
 
-        /* BOTONES */
+        /* =========================================
+           BOTONES
+        ========================================== */
 
         .btn{
 
@@ -103,7 +210,9 @@
 
         }
 
-        /* VIDEO */
+        /* =========================================
+           VIDEO
+        ========================================== */
 
         video{
 
@@ -117,9 +226,23 @@
 
         }
 
-        /* NAVBAR */
+        /* =========================================
+           NAVBAR
+        ========================================== */
 
         .navbar{
+
+            backdrop-filter: blur(10px);
+
+        }
+
+        /* =========================================
+           CONTENIDO PRINCIPAL
+        ========================================== */
+
+        main{
+
+            background: rgba(255,255,255,0.90);
 
             backdrop-filter: blur(10px);
 
@@ -152,10 +275,6 @@
     <!-- CONTENIDO -->
     <main
         class="container mt-4 p-4 rounded-5 shadow-lg"
-        style="
-            background: rgba(255,255,255,0.90);
-            backdrop-filter: blur(10px);
-        "
     >
 
         @yield('content')

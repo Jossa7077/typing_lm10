@@ -19,7 +19,7 @@
     </h1>
 
     <p class="lead mt-3">
-        Aprende mecanografía mientras conoces la historia del mejor futbolista del mundo.
+        Aprende mecanografía mientras conoces la historia del mejor futbolista de la Historia.
     </p>
 
 </div>
@@ -306,9 +306,26 @@ input.addEventListener('input', function(){
     let escrito =
     input.value.toLowerCase();
 
-    // progreso
+    let coincidencias = 0;
+
+    // VALIDAR LETRA POR LETRA
+    for(let i = 0; i < escrito.length; i++){
+
+        if(escrito[i] === textoCorrecto[i]){
+
+            coincidencias++;
+
+        }else{
+
+            break;
+
+        }
+
+    }
+
+    // PROGRESO SOLO SI COINCIDE
     let progreso =
-    (escrito.length / textoCorrecto.length) * 100;
+    (coincidencias / textoCorrecto.length) * 100;
 
     progreso =
     Math.min(progreso,100);
@@ -319,13 +336,19 @@ input.addEventListener('input', function(){
     document.getElementById('barra').innerHTML =
     Math.floor(progreso) + '%';
 
-    // completar automáticamente
+    // COMPLETAR AUTOMÁTICAMENTE
     if(escrito === textoCorrecto){
 
         terminarLeccion();
 
         document.getElementById('estado').innerHTML =
         "Completado ✅";
+
+        document.getElementById('barra').style.width =
+        "100%";
+
+        document.getElementById('barra').innerHTML =
+        "100%";
 
         alert(
             "¡Excelente! Terminaste la lección en "
@@ -342,8 +365,21 @@ function iniciarLeccion(){
 
         iniciado = true;
 
+        tiempo = 0;
+
+        document.getElementById('contador').innerHTML =
+        "0 s";
+
         document.getElementById('estado').innerHTML =
         "Escribiendo...";
+
+        document.getElementById('barra').style.width =
+        "0%";
+
+        document.getElementById('barra').innerHTML =
+        "0%";
+
+        input.value = "";
 
         intervalo = setInterval(function(){
 
