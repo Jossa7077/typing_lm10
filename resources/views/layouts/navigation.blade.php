@@ -16,31 +16,34 @@
         <a class="navbar-brand fw-bold fs-3 d-flex align-items-center"
            href="{{ route('inicio') }}"
            style="
-                letter-spacing:1px;
-                transition:0.3s;
+                letter-spacing: 1px;
+                transition: 0.3s;
            "
         >
-
             ⚽ Typing Messi
-
         </a>
+
 
         <!-- BOTÓN RESPONSIVE -->
         <button class="navbar-toggler border-0 shadow-none"
                 type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+                id="menuToggle"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir navegación">
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
-        <!-- LINKS -->
-        <div class="collapse navbar-collapse" id="navbarNav">
 
-            <!-- IZQUIERDA -->
+        <!-- MENÚ -->
+        <div class="navbar-collapse-custom" id="navbarNav">
+
+            <!-- LINKS PRINCIPALES -->
             <ul class="navbar-nav mx-auto gap-lg-3">
 
+                <!-- INICIO -->
                 <li class="nav-item">
                     <a class="nav-link nav-hover"
                        href="{{ route('inicio') }}">
@@ -48,6 +51,8 @@
                     </a>
                 </li>
 
+
+                <!-- HISTORIA -->
                 <li class="nav-item">
                     <a class="nav-link nav-hover"
                        href="{{ route('menu') }}">
@@ -55,6 +60,8 @@
                     </a>
                 </li>
 
+
+                <!-- NOSOTROS -->
                 <li class="nav-item">
                     <a class="nav-link nav-hover"
                        href="{{ route('nosotros') }}">
@@ -62,6 +69,8 @@
                     </a>
                 </li>
 
+
+                <!-- CONTACTO -->
                 <li class="nav-item">
                     <a class="nav-link nav-hover"
                        href="{{ route('contacto') }}">
@@ -71,12 +80,13 @@
 
             </ul>
 
-            <!-- DERECHA -->
+
+            <!-- PARTE DERECHA -->
             <ul class="navbar-nav align-items-center">
 
                 @auth
 
-                    <!-- Usuario -->
+                    <!-- USUARIO -->
                     <li class="nav-item me-3">
 
                         <span
@@ -84,33 +94,38 @@
                             style="
                                 background: rgba(255,255,255,0.15);
                                 color: #00ffbf;
-                                border:1px solid rgba(255,255,255,0.2);
+                                border: 1px solid rgba(255,255,255,0.2);
                             "
                         >
-
-                             {{ Auth::user()->name }}
-
+                            {{ Auth::user()->name }}
                         </span>
 
                     </li>
 
-                    <!-- Dashboard -->
+
+                    <!-- DASHBOARD -->
                     <li class="nav-item">
+
                         <a class="nav-link nav-hover"
                            href="{{ route('dashboard') }}">
                             Dashboard
                         </a>
+
                     </li>
 
-                    <!-- Perfil -->
+
+                    <!-- PERFIL -->
                     <li class="nav-item">
+
                         <a class="nav-link nav-hover"
                            href="{{ route('profile.edit') }}">
                             Perfil
                         </a>
+
                     </li>
 
-                    <!-- Logout -->
+
+                    <!-- LOGOUT -->
                     <li class="nav-item ms-2">
 
                         <form method="POST"
@@ -119,6 +134,7 @@
                             @csrf
 
                             <button
+                                type="submit"
                                 class="btn btn-sm fw-bold px-3 rounded-pill"
                                 style="
                                     background: linear-gradient(
@@ -126,14 +142,12 @@
                                         #ef4444,
                                         #dc2626
                                     );
-                                    color:white;
-                                    border:none;
-                                    transition:0.3s;
+                                    color: white;
+                                    border: none;
+                                    transition: 0.3s;
                                 "
                             >
-
                                 Logout
-
                             </button>
 
                         </form>
@@ -142,9 +156,10 @@
 
                 @endauth
 
+
                 @guest
 
-                    <!-- Login -->
+                    <!-- LOGIN -->
                     <li class="nav-item">
 
                         <a class="btn btn-outline-light rounded-pill px-4 me-2"
@@ -156,7 +171,8 @@
 
                     </li>
 
-                    <!-- Register -->
+
+                    <!-- REGISTER -->
                     <li class="nav-item">
 
                         <a class="btn rounded-pill px-4 fw-bold"
@@ -167,8 +183,8 @@
                                     #3b82f6,
                                     #7c3aed
                                 );
-                                color:white;
-                                border:none;
+                                color: white;
+                                border: none;
                            "
                         >
 
@@ -188,38 +204,229 @@
 
 </nav>
 
+
 <!-- ESTILOS -->
 <style>
 
-    .nav-hover{
+    /* =========================================
+       ENLACES DEL NAVBAR
+    ========================================== */
+
+    .nav-hover {
+
         position: relative;
+
         transition: 0.3s;
+
         font-weight: 500;
+
     }
 
-    .nav-hover:hover{
+
+    /* EFECTO HOVER */
+
+    .nav-hover:hover {
+
         color: #ffd700 !important;
+
         transform: translateY(-2px);
+
     }
 
-    .nav-hover::after{
-        content:'';
-        position:absolute;
-        left:0;
-        bottom:0;
-        width:0%;
-        height:2px;
-        background:#ffd700;
-        transition:0.3s;
+
+    /* LÍNEA DEBAJO */
+
+    .nav-hover::after {
+
+        content: '';
+
+        position: absolute;
+
+        left: 0;
+
+        bottom: 0;
+
+        width: 0%;
+
+        height: 2px;
+
+        background: #ffd700;
+
+        transition: 0.3s;
+
     }
 
-    .nav-hover:hover::after{
-        width:100%;
+
+    .nav-hover:hover::after {
+
+        width: 100%;
+
     }
 
-    .navbar-brand:hover{
+
+    /* =========================================
+       EFECTO DEL LOGO
+    ========================================== */
+
+    .navbar-brand:hover {
+
         transform: scale(1.05);
-        color:#ffd700 !important;
+
+        color: #ffd700 !important;
+
+    }
+
+
+    /* =========================================
+       MENÚ PERSONALIZADO
+    ========================================== */
+
+    .navbar-collapse-custom {
+
+        display: flex;
+
+        align-items: center;
+
+        flex: 1;
+
+    }
+
+
+    /* =========================================
+       PANTALLAS PEQUEÑAS
+       Menos de 992px
+    ========================================== */
+
+    @media (max-width: 991.98px) {
+
+        .navbar-collapse-custom {
+
+            display: none;
+
+            width: 100%;
+
+            flex-direction: column;
+
+            align-items: stretch;
+
+            padding-top: 15px;
+
+        }
+
+
+        /* MENÚ ABIERTO */
+
+        .navbar-collapse-custom.menu-abierto {
+
+            display: flex;
+
+        }
+
+
+        /* LISTAS */
+
+        .navbar-collapse-custom .navbar-nav {
+
+            width: 100%;
+
+            margin-left: 0 !important;
+
+            margin-right: 0 !important;
+
+            align-items: stretch !important;
+
+        }
+
+
+        /* ELEMENTOS */
+
+        .navbar-collapse-custom .nav-item {
+
+            width: 100%;
+
+            margin: 5px 0;
+
+        }
+
+
+        /* ENLACES */
+
+        .navbar-collapse-custom .nav-link {
+
+            display: block;
+
+            padding: 10px 15px;
+
+        }
+
+
+        /* BOTONES LOGIN / REGISTER */
+
+        .navbar-collapse-custom .btn {
+
+            margin: 5px 0;
+
+        }
+
+    }
+
+
+    /* =========================================
+       PANTALLAS GRANDES
+       992px o más
+    ========================================== */
+
+    @media (min-width: 992px) {
+
+        .navbar-toggler {
+
+            display: none;
+
+        }
+
+
+        .navbar-collapse-custom {
+
+            display: flex !important;
+
+        }
+
     }
 
 </style>
+
+
+<!-- JAVASCRIPT DEL MENÚ -->
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const boton = document.getElementById('menuToggle');
+
+        const menu = document.getElementById('navbarNav');
+
+
+        if (boton && menu) {
+
+            boton.addEventListener('click', function () {
+
+                menu.classList.toggle('menu-abierto');
+
+
+                const abierto =
+                    menu.classList.contains('menu-abierto');
+
+
+                boton.setAttribute(
+                    'aria-expanded',
+                    abierto
+                );
+
+            });
+
+        }
+
+    });
+
+</script>
