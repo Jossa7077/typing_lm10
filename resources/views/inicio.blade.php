@@ -15,7 +15,7 @@
     ">
 
     <h1 class="display-3 fw-bold">
-        Typing Messi ⚽
+        Typing Messi ⚽🚀
     </h1>
 
     <p class="lead mt-4 fs-4">
